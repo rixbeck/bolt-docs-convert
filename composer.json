@@ -1,0 +1,18 @@
+{
+	"keywords" : [
+		"bolt",
+		"CMS",
+		"documentation"
+	],
+	"name" : "rixbeck/bolt-docs-convert",
+	"type" : "u",
+	"description" : "Converting Bolt documentation various document formats",
+	"license" : "MIT",
+    "require" : {
+        "bolt/bolt-docs" : "dev-release/1.6"
+    },
+    "repositories" : [{
+            "type" : "vcs",
+            "url" : "https://github.com/bolt/bolt-docs.git"
+        }]
+}
