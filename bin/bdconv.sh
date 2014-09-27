@@ -8,6 +8,7 @@ REPL="<img src=\"$BASE"
 REPL="${REPL//\//\\/}"
 
 FILES=(\
+     $DIR/../source/cover.md \
      $SRC/about.md $SRC/requirements.md $SRC/installation.md $SRC/updating.md \
      $SRC/screenshots.md $SRC/content.md $SRC/content-in-templates.md \
      $SRC/taxonomies.md $SRC/menus.md $SRC/permissions.md $SRC/templates-routes.md \
