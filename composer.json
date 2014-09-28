@@ -9,7 +9,7 @@
 	"description" : "Converting Bolt documentation various document formats",
 	"license" : "MIT",
 	"require" : {
-		"bolt/bolt-docs" : "dev-release/1.6"
+		"bolt/bolt-docs" : "dev-master"
 	},
 	"repositories" : [{
 			"type" : "vcs",
