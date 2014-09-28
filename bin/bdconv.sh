@@ -22,8 +22,6 @@ do
    FLIST="$FLIST $i"
 done
 
-#cat $SRC/record-and-records.md | gawk -v base=$BASE '{ RS = "\f"; a=gensub(/<a href="([^"]*)[^>]*>\n*\s*<img src="[^"]*"[^>]*>\n*[^\n]*\n{1}([^\n]*)/,"![\\2](" base "/\\1)\n","gmi",$0); print a}'
-
 cat $FLIST \
    | gawk '{ RS = "\f"; a=gensub(/<a href="([^"]*)[^>]*>\n*\s*<img src="[^"]*"[^>]*>\n*[^\n]*\n{1}([^\n]*)/,"![\\2](\\1)\n","gmi",$0); print a}' \
    | sed -e "s/](/](${BASE}/g" \
