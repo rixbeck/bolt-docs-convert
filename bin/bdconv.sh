@@ -3,9 +3,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BASE=$DIR/../vendor/bolt/bolt-docs
 SRC=$BASE/source
 
-FIND="<img src="
-REPL="<img src=\"$BASE"
-REPL="${REPL//\//\\/}"
+BASE="${BASE//\//\\/}"
 
 FILES=(\
      $DIR/../source/cover.md \
@@ -24,6 +22,9 @@ do
    FLIST="$FLIST $i"
 done
 
+#cat $SRC/record-and-records.md | gawk -v base=$BASE '{ RS = "\f"; a=gensub(/<a href="([^"]*)[^>]*>\n*\s*<img src="[^"]*"[^>]*>\n*[^\n]*\n{1}([^\n]*)/,"![\\2](" base "/\\1)\n","gmi",$0); print a}'
+
 cat $FLIST \
-   | sed -e "s/<img src=\"/${REPL}/g" \
+   | gawk '{ RS = "\f"; a=gensub(/<a href="([^"]*)[^>]*>\n*\s*<img src="[^"]*"[^>]*>\n*[^\n]*\n{1}([^\n]*)/,"![\\2](\\1)\n","gmi",$0); print a}' \
+   | sed -e "s/](/](${BASE}/g" \
    | pandoc -S -o $1
