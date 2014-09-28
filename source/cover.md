@@ -1,3 +1,3 @@
-% Bolt Users' Guide - v.1.6.
+% Bolt Users' Guide - v.2.0
 % http://docs.bolt.cm
 
